@@ -11,19 +11,7 @@ struct FrameworkView: View {
     let framework: Framework
     
     var body: some View {
-        VStack {
-            Image(framework.imageName)
-                .resizable()
-                .frame(width: 72, height: 72)
-                .aspectRatio(contentMode: .fit)
-            Text(framework.name)
-                .font(.system(size: 24, weight: .semibold))
-                .truncationMode(.tail)
-                .scaledToFit()
-                .minimumScaleFactor(0.5)
-        }.padding(.all).onTapGesture {
-            // TODO: Handle tap on framework
-        }
+        FrameworkTitleView(imageName: framework.imageName, name: framework.name)
     }
 }
 
